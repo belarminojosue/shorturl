@@ -1,0 +1,38 @@
+{
+  "name": "shorturl",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "license": "MIT",
+  "author": "Belarmino",
+  "scripts": {
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
+    "clean": "rimraf dist",
+    "mkdir": "mkdirp dist/client",
+    "copy": "cpy src/client/** dist/client",
+    "prebuild": "yarn run clean && yarn run mkdir && yarn run copy",
+    "build": "tsc",
+    "start": "node ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "mongoose": "^7.0.3",
+    "monk": "^7.3.4",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.0.0",
+    "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^18.15.11",
+    "cpy-cli": "^4.2.0",
+    "dotenv": "^16.0.3",
+    "mkdirp": "^2.1.6",
+    "rimraf": "^4.4.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.3"
+  }
+}
